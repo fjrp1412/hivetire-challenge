@@ -9,6 +9,9 @@ class Vehicle(models.Model):
     type = models.CharField(max_length=200)
     fleet = models.CharField(max_length=200)
 
+    def get_last_inspection(self) -> "VehicleInspection | None":
+        return self.vehicleinspection_set.order_by("-date").first()
+
 
 class VehicleInspection(models.Model):
     vehicle = models.ForeignKey(Vehicle, on_delete=models.CASCADE)
