@@ -6,9 +6,7 @@ app_name = "api"
 router = DefaultRouter(trailing_slash=True)
 
 router.register(r"vehicles", VehicleViewSet, basename="vehicle")
-router.register(
-    r"vehicle-inspections", VehicleInspectionViewSet, basename="vehicle-inspection"
-)
+router.register(r"inspections", VehicleInspectionViewSet, basename="inspection")
 
 
 urlpatterns = router.urls
