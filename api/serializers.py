@@ -53,7 +53,7 @@ class VehicleInspectionCreateSerializer(ModelSerializer):
         queryset=Vehicle.objects.all(), source="vehicle",
         error_messages={"does_not_exist": "El vehículo con id '{pk_value}' no existe."}
     )
-    odometer_km = serializers.FloatField(source="odometer")
+    odometer_km = serializers.FloatField(source="odometer", min_value=0)
 
     class Meta:
         model = VehicleInspection

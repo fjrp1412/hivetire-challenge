@@ -15,7 +15,7 @@ from api.services import InspectionService
 
 
 class VehicleViewSet(ModelViewSet):
-    queryset = Vehicle.objects.prefetch_related("vehicleinspection_set")
+    queryset = Vehicle.objects.all()
     serializer_class = VehicleSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_class = VehicleFilter

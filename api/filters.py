@@ -54,8 +54,8 @@ class VehicleFilter(django_filters.FilterSet):
 class VehicleInspectionFilter(django_filters.FilterSet):
     id = django_filters.NumberFilter(field_name="id")
     vehicle = django_filters.NumberFilter(field_name="vehicle_id")
-    date_from = DateRangeFilter(field_name="date", lookup_expr="gte")
-    date_to = DateRangeFilter(field_name="date", lookup_expr="lte")
+    date_from = DateRangeFilter(field_name="date", lookup_expr="date__gte")
+    date_to = DateRangeFilter(field_name="date", lookup_expr="date__lte")
     status = django_filters.ChoiceFilter(choices=VehicleInspectionStatus.choices)
 
     class Meta:
